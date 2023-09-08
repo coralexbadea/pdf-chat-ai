@@ -27,7 +27,7 @@
     "eslint": "8.46.0",
     "eslint-config-next": "13.4.13",
     "langchain": "^0.0.126",
-    "lucide-react": "^0.265.0",
+    "lucide-react": "^0.263.1",
     "next": "13.4.13",
     "next-themes": "^0.2.1",
     "pdf-parse": "^1.1.1",
