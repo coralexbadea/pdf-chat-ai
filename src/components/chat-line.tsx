@@ -47,7 +47,7 @@ export function ChatLine({
                 : "text-blue-500 dark:text-blue-200"
             }
           >
-            {role == "assistant" ? "Dorel" : "You"}
+            {role == "assistant" ? "Dorel" : "Tu"}
           </CardTitle>
         </CardHeader>
         <CardContent className="text-sm">

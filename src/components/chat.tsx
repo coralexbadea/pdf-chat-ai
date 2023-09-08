@@ -98,10 +98,10 @@ export function Chat() {
     }
   };
 
-  let placeholder = "Type a message to start ...";
+  let placeholder = "Scrie ceva...";
 
   if (messages.length > 2) {
-    placeholder = "Type to continue your conversation";
+    placeholder = "Continua conversatia";
   }
 
   return (
