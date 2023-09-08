@@ -135,7 +135,7 @@ export function Chat() {
         setInput={setInput}
         sendMessage={sendQuestion}
         placeholder={placeholder}
-        isLoading={isLoading}
+        isLoading={false}
       />
     </div>
   );

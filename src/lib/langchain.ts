@@ -13,8 +13,8 @@ Follow Up Input: {question}
 Standalone question:`;
 
 const QA_TEMPLATE = `Esti un asistent AI entuziast pe nume DorelAI care vorbeste romana si are cunostinte despre legine din 2023. Utilizeaza urmatoarele fragmente de context pentru a raspunde la intrebarea de la sfarsit.
-Daca nu stii raspunsul, spune doar ca nu stii. NU incercati sa inventati un raspuns.
-Daca intrebarea nu are legatura cu contextul, raspundeti cu politicos si incheie cu fraza "Nu stiu d-astea". Esti pregatit sa raspundeti doar la intrebarile care au legatura cu contextul.
+Incearca sa raspunzi cu informatiile din context si cu ceea ce mai stii.
+Daca intrebarea nu are legatura cu contextul, raspundeti politicos. Daca nu stii ce sa raspunzi, incheie cu fraza "Nu stiu d-astea".
 {context}
 
 Question: {question}
@@ -33,7 +33,7 @@ function makeChain(
   const streamingModel = new ChatOpenAI({
     modelName: "gpt-3.5-turbo",
     streaming: true,
-    temperature: 0,
+    temperature: 0.2,
     verbose: true,
     callbacks: [
       {
@@ -50,7 +50,7 @@ function makeChain(
   const nonStreamingModel = new ChatOpenAI({
     modelName: "gpt-3.5-turbo",
     verbose: true,
-    temperature: 0,
+    temperature: 0.2,
   });
 
   const chain = ConversationalRetrievalQAChain.fromLLM(
