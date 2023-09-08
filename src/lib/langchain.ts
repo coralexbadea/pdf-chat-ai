@@ -100,7 +100,7 @@ export async function callChain({
       })
       .then(async (res) => {
         const sourceDocuments = res?.sourceDocuments;
-        const firstTwoDocuments = sourceDocuments.slice(0, 2);
+        const firstTwoDocuments = sourceDocuments?.slice(0, 2);
         const pageContents = firstTwoDocuments.map(
           ({ pageContent }: { pageContent: string }) => pageContent
         );
