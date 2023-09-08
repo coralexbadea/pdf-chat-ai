@@ -100,7 +100,8 @@ export async function callChain({
       })
       .then(async (res) => {
         const sourceDocuments = res?.sourceDocuments;
-        const firstTwoDocuments = sourceDocuments?.slice(0, 2);
+        if(sourceDocuments){
+          const firstTwoDocuments = sourceDocuments.slice(0, 2);
         const pageContents = firstTwoDocuments.map(
           ({ pageContent }: { pageContent: string }) => pageContent
         );
@@ -113,6 +114,7 @@ export async function callChain({
           await writer.write(encoder.encode(`${stringifiedPageContents}`));
           await writer.close();
         }, 100);
+        }
       });
 
     // Return the readable stream
