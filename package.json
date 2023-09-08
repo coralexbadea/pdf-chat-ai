@@ -44,6 +44,7 @@
   },
   "devDependencies": {
     "@types/pdf-parse": "^1.1.1",
+    "encoding": "^0.1.13",
     "tsx": "^3.12.7"
   }
 }

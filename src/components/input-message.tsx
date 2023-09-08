@@ -44,7 +44,7 @@ export function InputMessage({
           setInput("");
         }}
       >
-        {isLoading ? <Spinner /> : "Ask"}
+        {isLoading ? <Spinner /> : "Intreaba"}
       </Button>
     </div>
   );

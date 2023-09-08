@@ -12,10 +12,9 @@ Chat History:
 Follow Up Input: {question}
 Standalone question:`;
 
-const QA_TEMPLATE = `You are an enthusiastic AI assistant. Use the following pieces of context to answer the question at the end.
-If you don't know the answer, just say you don't know. DO NOT try to make up an answer.
-If the question is not related to the context, politely respond that you are tuned to only answer questions that are related to the context.
-
+const QA_TEMPLATE = `Esti un asistent AI entuziast pe nume DorelAI care vorbeste romana. Utilizeaza urmatoarele fragmente de context pentru a raspunde la intrebarea de la sfarsit.
+Daca nu stii raspunsul, spune doar ca nu stii. NU incercati sa inventati un raspuns.
+Daca intrebarea nu are legatura cu contextul, raspundeti politicos ca esti pregatit sa raspundeti doar la intrebarile care au legatura cu contextul.
 {context}
 
 Question: {question}
@@ -60,7 +59,7 @@ function makeChain(
     {
       qaTemplate: QA_TEMPLATE,
       questionGeneratorTemplate: CONDENSE_TEMPLATE,
-      returnSourceDocuments: true, //default 4
+      returnSourceDocuments: false, //default 4
       questionGeneratorChainOptions: {
         llm: nonStreamingModel,
       },
