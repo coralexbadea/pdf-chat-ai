@@ -71,13 +71,18 @@ export function Chat() {
       let streamingAIContent = "";
       let tokensEnded = false;
       let sourceDocuments = "";
-
+      console.log("1")
       while (true) {
         const { done, value } = (await reader?.read()) || {};
-
-        if (done) {
+        let check = done
+        setTimeout(() => {
+          check = true
+        }, 5000);
+      
+        if (check) {
           break;
         }
+
 
         const text = new TextDecoder().decode(value);
         if (text === "tokens-ended" && !tokensEnded) {
@@ -88,12 +93,15 @@ export function Chat() {
           streamingAIContent = streamingAIContent + text;
           updateStreamingAIContent(streamingAIContent);
         }
-      }
+        console.log("2")
 
+      }
+      console.log("3")
       handleStreamEnd(question, streamingAIContent, sourceDocuments);
     } catch (error) {
       console.log("Error occured ", error);
     } finally {
+      console.log("final")
       setIsLoading(false);
     }
   };
